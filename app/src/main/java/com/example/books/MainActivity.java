@@ -15,6 +15,7 @@ public class MainActivity extends AppCompatActivity {
     Button login;
 
 
+
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
@@ -22,6 +23,7 @@ public class MainActivity extends AppCompatActivity {
         name = findViewById(R.id.et_name);
         pass = findViewById(R.id.et_pass);
         login = findViewById(R.id.b_login);
+
 
 
     }
@@ -44,6 +46,11 @@ public class MainActivity extends AppCompatActivity {
             return 0;
     }
 
+    public void signup(View view) {
+
+        Intent main_to_signup=new Intent(MainActivity.this,sign_up.class);
+        startActivity(main_to_signup);
+    }
 }
 
 

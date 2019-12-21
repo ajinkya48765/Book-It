@@ -10,4 +10,19 @@
     <string name="invalid_password">Password must be >5 characters</string>
     <string name="login_failed">"Login failed"</string>
     <string name="title_activity_login">Sign in</string>
+    <string-array name="list_branch">
+        <item>Branch</item>
+        <item>COMPUTER</item>
+        <item>IT</item>
+        <item>ENTC</item>
+        <item>ELECTRICAL</item>
+        <item>INSTUMENTATION</item>
+    </string-array>
+    <string-array name="list_year">
+        <item>Year</item>
+        <item>FE</item>
+        <item>SE</item>
+        <item>TE</item>
+        <item>BE</item>
+    </string-array>
 </resources>

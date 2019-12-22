@@ -1,5 +1,6 @@
 package com.example.books;
 
+import android.app.ProgressDialog;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
@@ -7,7 +8,13 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
 
 public class sign_up extends AppCompatActivity {
 
@@ -15,6 +22,11 @@ public class sign_up extends AppCompatActivity {
     EditText name,password,phone,email;
     Spinner branch,year;
     String sname,spass,sphone,semail,sbranch,syear;
+    ProgressDialog progressDialog;
+    FirebaseAuth firebaseAuth;
+
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -27,6 +39,8 @@ public class sign_up extends AppCompatActivity {
         branch=findViewById(R.id.branch);
         year=findViewById(R.id.year);
 
+
+
         Spinner branch =(Spinner)findViewById(R.id.branch);
         ArrayAdapter<CharSequence> adapter=ArrayAdapter.createFromResource(this,R.array.list_branch,android.R.layout.simple_spinner_dropdown_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
@@ -37,8 +51,7 @@ public class sign_up extends AppCompatActivity {
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         year.setAdapter(adapter2);
 
-       //sname=name.getText().toString();
-      // Toast.makeText(getApplicationContext(),sname,Toast.LENGTH_LONG).show();
+
     }
 
 
@@ -78,8 +91,10 @@ public class sign_up extends AppCompatActivity {
         else
         {
             Toast.makeText(getApplicationContext(),"Account Created Successfully",Toast.LENGTH_LONG).show();
+
         }
 
 
     }
 }
+

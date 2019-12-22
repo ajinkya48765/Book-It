@@ -3,6 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.example.books">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -10,10 +12,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".sign_up"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar">
-
-        </activity>
+        <activity android:name=".signup_auth"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"></activity>
+        <activity
+            android:name=".sign_up"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"></activity>
         <activity android:name=".sell_purchase" />
         <activity android:name=".MainActivity" />
         <activity
@@ -27,11 +30,9 @@
         </activity>
 
         <meta-data
-            tools:node="replace"
             android:name="android.support.VERSION"
             android:value="15.0.0"
-            />
-
+            tools:node="replace" />
     </application>
 
 </manifest>

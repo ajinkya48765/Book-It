@@ -11,7 +11,8 @@
     <string name="login_failed">"Login failed"</string>
     <string name="title_activity_login">Sign in</string>
     <string-array name="list_branch">
-        <item>Branch</item>
+        <item>Department</item>
+        <item>FE</item>
         <item>COMPUTER</item>
         <item>IT</item>
         <item>ENTC</item>
@@ -20,7 +21,6 @@
     </string-array>
     <string-array name="list_year">
         <item>Year</item>
-        <item>FE</item>
         <item>SE</item>
         <item>TE</item>
         <item>BE</item>

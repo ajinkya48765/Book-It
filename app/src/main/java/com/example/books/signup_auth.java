@@ -15,16 +15,18 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 public class signup_auth extends AppCompatActivity {
 
 
     EditText email;
     EditText pass;
-    Button submit;
+    Button submit,verify;
 
     private ProgressDialog progressDialog;
     FirebaseAuth firebaseAuth;
+    FirebaseUser user;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,8 +35,10 @@ public class signup_auth extends AppCompatActivity {
         email=findViewById(R.id.auth_email);
         pass=findViewById(R.id.auth_pass);
         submit=findViewById(R.id.auth_submit);
+        verify=findViewById(R.id.verify);
         progressDialog=new ProgressDialog(this);
         firebaseAuth=FirebaseAuth.getInstance();
+        user=firebaseAuth.getCurrentUser();
     }
 
     public void submit(View view) {
@@ -92,5 +96,19 @@ public class signup_auth extends AppCompatActivity {
                 }
             });
 
+    }
+
+    public void verify(View view) {
+
+        user.sendEmailVerification().addOnCompleteListener(new OnCompleteListener<Void>() {
+            @Override
+            public void onComplete(@NonNull Task<Void> task) {
+                if(task.isSuccessful())
+                    Toast.makeText(getApplicationContext(),"Verification mail has been sent",Toast.LENGTH_LONG).show();
+                else
+                    Toast.makeText(getApplicationContext(),"Failed, Please try again",Toast.LENGTH_LONG).show();
+
+            }
+        });
     }
 }

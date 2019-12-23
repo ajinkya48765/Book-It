@@ -16,4 +16,132 @@
         <item>TE</item>
         <item>BE</item>
     </string-array>
+
+    <string name="sell">Sell</string>
+    <string name="purchase">Purchase</string>
+    <string name="submit">Submit</string>
+    <string-array name="list_Branch">
+        <item>Department</item>
+        <item>Computer</item>
+        <item>ENTC</item>
+        <item>Electrical</item>
+        <item>Instrumentation</item>
+        <item>IT</item>
+    </string-array>
+    <string-array name="list_publications">
+        <item>Publications</item>
+        <item>TechMax</item>
+        <item>Technical</item>
+        <item>Nirali</item>
+    </string-array>
+    <string-array name="SE_Comp">
+        <item>Subjects</item>
+        <item>M3</item>
+        <item>CG</item>
+        <item>MP</item>
+        <item>ADS</item>
+        <item>COA</item>
+        <item>PPL</item>
+        <item>DM</item>
+        <item>DELD</item>
+        <item>DSA</item>
+        <item>OOP</item>
+    </string-array>
+    <string-array name="TE_Comp">
+        <item>Subject</item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+    </string-array>
+    <string-array name="BE_Comp">
+        <item>s</item>
+        <item>f</item>
+        <item>e</item>
+        <item>BE</item>
+        <item>BE</item>
+        <item>BE</item>
+        <item>BE</item>
+        <item>BE</item>
+        <item>BE</item>
+        <item>BE</item>
+    </string-array>
+    <string-array name="SE_ENTC">
+        <item>Subjects</item>
+        <item>M3</item>
+        <item>IC</item>
+        <item>CS</item>
+        <item>AC</item>
+        <item>OOP</item>
+        <item>SS</item>
+        <item>EDC</item>
+        <item>ECM</item>
+        <item>DSA</item>
+        <item>DE</item>
+    </string-array>
+    <string-array name="TE_ENTC">
+        <item>s</item>
+        <item>f</item>
+        <item>e</item>
+        <item>BE</item>
+        <item>BE</item>
+        <item>BE</item>
+        <item>BE</item>
+        <item>BE</item>
+        <item>BE</item>
+        <item>BE</item>
+    </string-array>
+    <string-array name="BE_ENTC">
+        <item>s</item>
+        <item>f</item>
+        <item>e</item>
+        <item>BE</item>
+        <item>BE</item>
+        <item>BE</item>
+        <item>BE</item>
+        <item>BE</item>
+        <item>BE</item>
+        <item>BE</item>
+    </string-array>
+    <string-array name="SE_IT">
+        <item>s</item>
+        <item>f</item>
+        <item>e</item>
+        <item>BE</item>
+        <item>BE</item>
+        <item>BE</item>
+        <item>BE</item>
+        <item>BE</item>
+        <item>BE</item>
+        <item>BE</item>
+    </string-array>
+    <string-array name="TE_IT">
+        <item>s</item>
+        <item>f</item>
+        <item>e</item>
+        <item>BE</item>
+        <item>BE</item>
+        <item>BE</item>
+        <item>BE</item>
+        <item>BE</item>
+        <item>BE</item>
+        <item>BE</item>
+    </string-array>
+    <string-array name="BE_IT">
+        <item>s</item>
+        <item>f</item>
+        <item>e</item>
+        <item>BE</item>
+        <item>BE</item>
+        <item>BE</item>
+        <item>BE</item>
+        <item>BE</item>
+        <item>BE</item>
+        <item>BE</item>
+    </string-array>
 </resources>

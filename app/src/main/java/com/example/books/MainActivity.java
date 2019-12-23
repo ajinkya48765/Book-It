@@ -65,7 +65,7 @@ public class MainActivity extends AppCompatActivity {
                 if(task.isSuccessful())
                 {
                     Toast.makeText(getApplicationContext(),"Login Successful",Toast.LENGTH_LONG).show();
-                    Intent main_to_sellpurchase = new Intent(MainActivity.this, sell_purchase.class);
+                    Intent main_to_sellpurchase = new Intent(MainActivity.this, sell_purchase_window.class);
                     main_to_sellpurchase.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                     startActivity(main_to_sellpurchase);
                     progressDialog.cancel();

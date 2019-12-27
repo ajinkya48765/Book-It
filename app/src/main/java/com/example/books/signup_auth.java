@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Patterns;
 import android.view.View;
@@ -35,16 +36,13 @@ public class signup_auth extends AppCompatActivity {
         email=findViewById(R.id.auth_email);
         pass=findViewById(R.id.auth_pass);
         submit=findViewById(R.id.auth_submit);
-        verify=findViewById(R.id.verify);
+        //verify=findViewById(R.id.verify);
         progressDialog=new ProgressDialog(this);
         firebaseAuth=FirebaseAuth.getInstance();
         user=firebaseAuth.getCurrentUser();
     }
 
     public void submit(View view) {
-
-
-
 
         registerUser();
     }
@@ -87,6 +85,9 @@ public class signup_auth extends AppCompatActivity {
                     {
                         Toast.makeText(getApplicationContext(),"You have Registered Successfully",Toast.LENGTH_LONG).show();
                         progressDialog.cancel();
+                        Intent intent=new Intent(signup_auth.this, MainActivity.class);
+                        intent.addFlags(intent.FLAG_ACTIVITY_CLEAR_TOP);
+                        startActivity(intent);
                     }
                     else
                     {
@@ -95,6 +96,8 @@ public class signup_auth extends AppCompatActivity {
                     }
                 }
             });
+
+
 
     }
 

@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#050714"
     tools:context=".purchase">
 
 
@@ -11,6 +12,7 @@
         android:id="@+id/branch1"
         android:layout_width="250dp"
         android:layout_height="wrap_content"
+        android:backgroundTint="@color/White"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -22,6 +24,7 @@
         android:id="@+id/year1"
         android:layout_width="250dp"
         android:layout_height="wrap_content"
+        android:backgroundTint="@color/White"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintHorizontal_bias="0.503"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -33,6 +36,7 @@
         android:id="@+id/subject1"
         android:layout_width="250dp"
         android:layout_height="wrap_content"
+        android:backgroundTint="@color/White"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintHorizontal_bias="0.503"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -52,5 +56,6 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.797" />
 
+    // android:background="#050714"
 
 </androidx.constraintlayout.widget.ConstraintLayout>

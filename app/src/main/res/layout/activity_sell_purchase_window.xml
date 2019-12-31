@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#050714"
     tools:context=".sell_purchase_window">
 
 
@@ -13,6 +14,7 @@
         android:layout_height="44dp"
         android:onClick="FSell"
         android:text="@string/sell"
+        app:layout_constraintCircleRadius="@dimen/cardview_default_radius"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintLeft_toLeftOf="parent"

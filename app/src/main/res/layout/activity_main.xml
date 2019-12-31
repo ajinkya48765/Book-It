@@ -5,6 +5,7 @@
 
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#050714"
     tools:context=".MainActivity">
 
     <EditText
@@ -12,14 +13,35 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="12dp"
+        android:drawableLeft="@drawable/ic_email_black_24dp"
         android:ems="10"
-        android:hint="Email"
+        android:freezesText="false"
+        android:hint=" Email"
+        android:textColor="@color/White"
+        android:backgroundTint="@color/White"
         android:inputType="textEmailAddress"
+        android:textColorHint="@color/White"
         app:layout_constraintBottom_toTopOf="@+id/et_pass"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="1.0" />
+
+    <EditText
+        android:id="@+id/et_pass"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:drawableLeft="@drawable/ic_lock_outline_black_24dp"
+        android:ems="10"
+        android:hint=" Password"
+        android:textColor="@color/White"
+        android:textColorHint="@color/White"
+        android:backgroundTint="@color/White"
+        android:inputType="textPassword"
+        app:layout_constraintBottom_toTopOf="@+id/b_login"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/b_login"
@@ -33,17 +55,7 @@
         app:layout_constraintHorizontal_bias="0.877"
         app:layout_constraintStart_toStartOf="parent" />
 
-    <EditText
-        android:id="@+id/et_pass"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="20dp"
-        android:ems="10"
-        android:hint="Password"
-        android:inputType="textPassword"
-        app:layout_constraintBottom_toTopOf="@+id/b_login"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+
 
     <Button
         android:id="@+id/b_signup"
@@ -51,8 +63,8 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="112dp"
         android:layout_marginRight="112dp"
-        android:text="SIGN UP"
         android:onClick="signup"
+        android:text="SIGN UP"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/et_pass"

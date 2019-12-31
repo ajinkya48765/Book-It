@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#050714"
     tools:context=".splash"
     >
 
@@ -33,6 +34,7 @@
         android:layout_marginRight="182dp"
         android:layout_marginBottom="36dp"
         android:text="from R.I.S.E"
+        android:textColor="#FFFFFF"
         android:textSize="30dp"
         android:fontFamily="@font/bazookaregular"
         app:layout_constraintBottom_toBottomOf="parent"

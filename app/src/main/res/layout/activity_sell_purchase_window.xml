@@ -2,6 +2,7 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/store"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#050714"
@@ -10,34 +11,55 @@
 
     <Button
         android:id="@+id/Sell"
-        android:layout_width="266dp"
-        android:layout_height="44dp"
+        android:layout_width="140dp"
+        android:layout_height="150dp"
         android:onClick="FSell"
         android:text="@string/sell"
-        app:layout_constraintCircleRadius="@dimen/cardview_default_radius"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.40"
 
-        />
+        app:layout_constraintCircleRadius="@dimen/cardview_default_radius"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.14"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.388" />
 
     <Button
         android:id="@+id/Purchase"
-        android:layout_width="265dp"
-        android:layout_height="39dp"
+        android:layout_width="140dp"
+        android:layout_height="150dp"
         android:onClick="FPurchase"
         android:text="@string/purchase"
+
+
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.841"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-
-
-        app:layout_constraintVertical_bias="0.6"
+        app:layout_constraintVertical_bias="0.388"
         tools:ignore="OnClick" />
+
+    <EditText
+        android:id="@+id/testbox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Enter text to store"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.663" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="store"
+        tools:layout_editor_absoluteX="159dp"
+        tools:layout_editor_absoluteY="523dp"
+        android:onClick="list"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

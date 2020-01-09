@@ -17,17 +17,20 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 public class signup_auth extends AppCompatActivity {
 
 
     EditText email;
     EditText pass;
-    Button submit,verify;
+    EditText name,phone;
+    Button submit;
 
     private ProgressDialog progressDialog;
     FirebaseAuth firebaseAuth;
-    FirebaseUser user;
+    DatabaseReference databaseReference;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,11 +38,17 @@ public class signup_auth extends AppCompatActivity {
         setContentView(R.layout.activity_signup_auth);
         email=findViewById(R.id.auth_email);
         pass=findViewById(R.id.auth_pass);
+        name=findViewById(R.id.auth_name);
+        phone=findViewById(R.id.auth_phone);
+
         submit=findViewById(R.id.auth_submit);
-        //verify=findViewById(R.id.verify);
         progressDialog=new ProgressDialog(this);
         firebaseAuth=FirebaseAuth.getInstance();
-        user=firebaseAuth.getCurrentUser();
+
+        databaseReference=FirebaseDatabase.getInstance().getReference("info");
+
+
+
     }
 
     public void submit(View view) {
@@ -49,10 +58,19 @@ public class signup_auth extends AppCompatActivity {
 
     private void registerUser() {
 
+
         String semail = email.getText().toString();
         String spass= pass.getText().toString();
+        final String uname=name.getText().toString();
+        final String uphone=phone.getText().toString();
+        final String uemail=email.getText().toString();
 
-        if(semail.isEmpty())
+        if(uname.isEmpty())
+        {
+            name.setError("Enter your name");
+            name.requestFocus();
+            return;
+        }if(semail.isEmpty())
         {
             email.setError("Email is required");
             email.requestFocus();
@@ -64,14 +82,24 @@ public class signup_auth extends AppCompatActivity {
             email.requestFocus();
             return;
         }
+        if(uphone.length()<10)
+        {
+            phone.setError("Enter valid phone number");
+            phone.requestFocus();
+            return;
+        }
+        if(!Patterns.PHONE.matcher(uphone).matches())
+        {
+            phone.setError("Enter valid phone number");
+            phone.requestFocus();
+            return;
+        }
         if(spass.length()<6)
         {
             pass.setError("Min length is 6");
             pass.requestFocus();
             return;
         }
-
-
 
 
         progressDialog.setMessage("Registering");
@@ -83,6 +111,14 @@ public class signup_auth extends AppCompatActivity {
 
                     if(task.isSuccessful())
                     {
+                        info uinfo= new info(
+                               uname,
+                                uemail,
+                                uphone
+                        );
+                        FirebaseDatabase.getInstance().getReference("info").child(FirebaseAuth.getInstance().getCurrentUser()
+                                .getUid()).setValue(uinfo);
+
                         Toast.makeText(getApplicationContext(),"You have Registered Successfully",Toast.LENGTH_LONG).show();
                         progressDialog.cancel();
                         Intent intent=new Intent(signup_auth.this, MainActivity.class);
@@ -101,17 +137,4 @@ public class signup_auth extends AppCompatActivity {
 
     }
 
-    public void verify(View view) {
-
-        user.sendEmailVerification().addOnCompleteListener(new OnCompleteListener<Void>() {
-            @Override
-            public void onComplete(@NonNull Task<Void> task) {
-                if(task.isSuccessful())
-                    Toast.makeText(getApplicationContext(),"Verification mail has been sent",Toast.LENGTH_LONG).show();
-                else
-                    Toast.makeText(getApplicationContext(),"Failed, Please try again",Toast.LENGTH_LONG).show();
-
-            }
-        });
-    }
 }

@@ -12,61 +12,77 @@
         android:id="@+id/et_name"
         android:layout_width="270dp"
         android:layout_height="50dp"
-        android:layout_marginBottom="12dp"
+        android:backgroundTint="@color/White"
         android:drawableLeft="@drawable/ic_email_black_24dp"
         android:ems="10"
         android:freezesText="false"
         android:hint=" Email"
-        android:textColor="@color/White"
-        android:backgroundTint="@color/White"
         android:inputType="textEmailAddress"
+        android:textColor="@color/White"
         android:textColorHint="@color/White"
-        app:layout_constraintBottom_toTopOf="@+id/et_pass"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintVertical_bias="0.277" />
 
     <EditText
         android:id="@+id/et_pass"
         android:layout_width="270dp"
         android:layout_height="50dp"
-        android:layout_marginBottom="20dp"
+        android:backgroundTint="@color/White"
         android:drawableLeft="@drawable/ic_lock_outline_black_24dp"
         android:ems="10"
         android:hint=" Password"
+        android:inputType="textPassword"
         android:textColor="@color/White"
         android:textColorHint="@color/White"
-        android:backgroundTint="@color/White"
-        android:inputType="textPassword"
-        app:layout_constraintBottom_toTopOf="@+id/b_login"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.372" />
 
     <Button
         android:id="@+id/b_login"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="320dp"
+        android:layout_width="175dp"
+        android:layout_height="43dp"
         android:onClick="login"
         android:text="LOGIN"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/b_signup"
-        app:layout_constraintHorizontal_bias="0.877"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.478" />
 
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Don't have an account?"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.79" />
 
-
-    <Button
+    <TextView
         android:id="@+id/b_signup"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="112dp"
-        android:layout_marginRight="112dp"
-        android:onClick="signup"
-        android:text="SIGN UP"
+        android:text="Sign up"
+        android:textSize="15dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/et_pass"
-        app:layout_constraintVertical_bias="0.058" />
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.817"
+        android:onClick="signup"
+        android:textStyle="bold"
+        android:textColor="#0061C9"/>
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -25,8 +25,7 @@ public class sell_purchase_window extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sell_purchase_window);
 
-        test=findViewById(R.id.testbox);
-        store=findViewById(R.id.button2);
+
 
 
 
@@ -43,11 +42,5 @@ public class sell_purchase_window extends AppCompatActivity {
         startActivity(intent);
     }
 
-    public void list(View view) {
 
-        text=test.getText().toString();
-
-        FirebaseDatabase.getInstance().getReference("info").child(FirebaseAuth.getInstance().getCurrentUser()
-                .getUid()).child("New :").setValue(text);
-    }
 }

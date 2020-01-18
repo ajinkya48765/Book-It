@@ -1,5 +1,6 @@
 package com.example.books;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -10,6 +11,14 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.Toast;
+
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.FirebaseDatabase;
+
+import java.time.Year;
 
 public class sell extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
@@ -23,10 +32,12 @@ public class sell extends AppCompatActivity implements AdapterView.OnItemSelecte
         setContentView(R.layout.activity_sell);
         Intent intent=getIntent();
 
-        subject=(Spinner) findViewById(R.id.Subject);
-        branch = (Spinner) findViewById(R.id.Branch);
-        publications=(Spinner) findViewById(R.id.Publications);
+        subject=findViewById(R.id.Subject);
+        branch = findViewById(R.id.Branch);
+        publications=findViewById(R.id.Publications);
         year= findViewById(R.id.Year);
+        submit=findViewById(R.id.submit);
+        Price=findViewById(R.id.price);
 
         ArrayAdapter<CharSequence> adapter1 =ArrayAdapter.createFromResource(this,R.array.list_Branch,android.R.layout.simple_selectable_list_item);
         adapter1.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
@@ -41,6 +52,7 @@ public class sell extends AppCompatActivity implements AdapterView.OnItemSelecte
         ArrayAdapter<CharSequence> adapter3= ArrayAdapter.createFromResource(this,R.array.TE_Comp,android.R.layout.simple_selectable_list_item);
         adapter3.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         subject.setAdapter(adapter3);
+        subject.setOnItemSelectedListener(this);
 
         ArrayAdapter<CharSequence> adapter4 =ArrayAdapter.createFromResource(this,R.array.list_publications,android.R.layout.simple_selectable_list_item);
         adapter4.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
@@ -69,15 +81,41 @@ public class sell extends AppCompatActivity implements AdapterView.OnItemSelecte
 
     @Override
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-        subject=(Spinner) findViewById(R.id.Subject);
         strbranch = branch.getSelectedItem().toString();
         stryear = year.getSelectedItem().toString();
         strpub =publications.getSelectedItem().toString();
+        strsubject=subject.getSelectedItem().toString();
         subfun(strbranch,stryear,strpub);
     }
 
     @Override
     public void onNothingSelected(AdapterView<?> parent) {
+
+    }
+
+    public void submit_sell(View view) {
+
+            String strprice=Price.getText().toString();
+
+            sell_details sell_details;
+            sell_details = new sell_details(
+
+                strbranch,
+                stryear,
+                strpub,
+                strsubject,
+                strprice
+        );
+        FirebaseDatabase.getInstance().getReference("info").child(FirebaseAuth.getInstance().getCurrentUser()
+                .getUid()).child("sell_info").push().setValue(sell_details).addOnCompleteListener(new OnCompleteListener<Void>() {
+            @Override
+            public void onComplete(@NonNull Task<Void> task) {
+                if(task.isSuccessful())
+                {
+                    Toast.makeText(getApplicationContext(),"Information added successfully",Toast.LENGTH_LONG).show();
+                }
+            }
+        });
 
     }
 }

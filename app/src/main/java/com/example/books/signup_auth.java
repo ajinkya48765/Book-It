@@ -117,7 +117,7 @@ public class signup_auth extends AppCompatActivity {
                                 uphone
                         );
                         FirebaseDatabase.getInstance().getReference("info").child(FirebaseAuth.getInstance().getCurrentUser()
-                                .getUid()).setValue(uinfo);
+                                .getUid()).child("personal_info").setValue(uinfo);
 
                         Toast.makeText(getApplicationContext(),"You have Registered Successfully",Toast.LENGTH_LONG).show();
                         progressDialog.cancel();

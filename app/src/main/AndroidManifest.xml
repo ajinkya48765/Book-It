@@ -12,7 +12,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".retrive_test"></activity>
+        <activity
+            android:name=".Scrolling_Purchase_Activity"
+            android:label="@string/title_activity_scrolling__purchase_"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity android:name=".retrive_test" />
         <activity
             android:name=".Navigation"
             android:label="@string/title_activity_navigation"

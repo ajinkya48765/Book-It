@@ -38,7 +38,7 @@ public class sell_purchase_window extends AppCompatActivity {
     }
     public void FPurchase(View view)
     {
-        Intent intent=new Intent(this,retrive_test.class);
+        Intent intent=new Intent(this,purchase.class);
         startActivity(intent);
     }
 

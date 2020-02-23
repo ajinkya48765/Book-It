@@ -16,6 +16,8 @@ import android.widget.Toast;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 import java.time.Year;
@@ -31,6 +33,8 @@ public class sell extends AppCompatActivity implements AdapterView.OnItemSelecte
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sell);
         Intent intent=getIntent();
+
+
 
         subject=findViewById(R.id.Subject);
         branch = findViewById(R.id.Branch);
@@ -106,6 +110,12 @@ public class sell extends AppCompatActivity implements AdapterView.OnItemSelecte
                 strsubject,
                 strprice
         );
+
+                    // Setting data in database
+
+           String childno= FirebaseDatabase.getInstance().getReference("info").child(FirebaseAuth.getInstance().getCurrentUser().getUid()).child("sell_info").child("publication").getParent().toString();
+       // String ids = Long.toString(childno);
+        Toast.makeText(getApplicationContext(),childno,Toast.LENGTH_LONG).show();
         FirebaseDatabase.getInstance().getReference("info").child(FirebaseAuth.getInstance().getCurrentUser()
                 .getUid()).child("sell_info").push().setValue(sell_details).addOnCompleteListener(new OnCompleteListener<Void>() {
             @Override

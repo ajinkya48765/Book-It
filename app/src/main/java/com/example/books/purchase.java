@@ -68,29 +68,16 @@ public class purchase extends AppCompatActivity implements AdapterView.OnItemSel
 
                 if(!strbranch1.isEmpty()&&!strsubject1.isEmpty()&&!stryear1.isEmpty())
                 {
-                    //Toast.makeText(getApplicationContext(),"yuioio",Toast.LENGTH_LONG).show();
+                    Toast.makeText(getApplicationContext(),"hello",Toast.LENGTH_LONG).show();
+
                     mdatareff.addValueEventListener(new ValueEventListener() {
                         @Override
                         public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
 
-                            String key;
-                            String key1 =  FirebaseDatabase.getInstance().getReference("info").child(FirebaseAuth.getInstance().getCurrentUser()
-                                    .getUid()).child("sell_info").push().getKey();
+                            for(DataSnapshot keynode : dataSnapshot.getChildren()){
 
-                            for(DataSnapshot keynode : dataSnapshot.child("sell_info").getChildren()){
-
-                                Toast.makeText(getApplicationContext(),"heyy",Toast.LENGTH_LONG).show();
-                               // String dept = keynode.child("sell_info").child("department").getValue().toString();
-                              //  String subject = keynode.child("sell_info").child("subject").getValue().toString();
-                               // String year = keynode.child("sell_info").child("year").getValue().toString();
-                               // Long id=keynode.child("sell_info").getChildrenCount()   ;
-                               // String ids = Long.toString(id);
-                               // key = keynode.child("sell_info").getKey();
-                               // Toast.makeText(getApplicationContext(),key,Toast.LENGTH_LONG).show();
-
- //                               if(strbranch1==dept&&strsubject1==subject&&stryear1==year){
-
-                                    String name=keynode.child("department").getValue().toString();
+                                Toast.makeText(getApplicationContext(),"Hii",Toast.LENGTH_LONG).show();
+                                String name = keynode.getValue(String.class);
                                 Toast.makeText(getApplicationContext(),name,Toast.LENGTH_LONG).show();
 
 

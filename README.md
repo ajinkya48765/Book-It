@@ -1,3 +1,4 @@
 # Books
 
-### created by ajinkya and gayatri
+### Android application for selling and purchasing old books
+
